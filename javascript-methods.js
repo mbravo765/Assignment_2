@@ -52,26 +52,46 @@ Array.prototype.myFilter = function(callbackFn) {
   // Place your code here.
   const filtered_array = []; //create a new array for filtered elements
   for(let i = 0; i < this.length; i++) {
-    if(myFilter(this[i],i,this)) {
+    if(callbackFn(this[i],i,this)) {
       filtered_array.myPush(callbackFn(this[i],i,this));
     }
   }
   return filtered_array;
 };
 
+console.log("Filter function");
 // Test for FILTER
 const words = ['fellow','friend','grandfather','aunt','cousin','grandmother'];
 console.log("All words in array: ");
 console.log(words);
 console.log("Words with a length greater than 6");
-const result = words.filter(word => word.length > 6);
+const result = words.myFilter(word => word.length > 6);
 console.log(result);
+
+console.log("------------------------------------------------------------");
 
 
 // SOME //
+// This method should test whether there is at least one element in the array that passes the provided test
 Array.prototype.mySome = function(callbackFn) {
   // Place your code here.
+  let x = false;
+  for(let i = 0; i < this.length; i++) {
+    if(callbackFn(this[i],i,this)) {
+      x = true;
+    }
+  }
+  return x;
 };
+
+//Test for Some method
+console.log("Some function");
+console.log(myArray);
+console.log("check if there is at least one element in array that is even");
+const even = (element) => element % 2 == 0;
+console.log(myArray.mySome(even));
+console.log("------------------------------------------------------------");
+
 
 // EVERY //
 Array.prototype.myEvery = function(callbackFn) {
