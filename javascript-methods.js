@@ -142,9 +142,34 @@ console.log("-------------------------------------------------------------------
 
 
 // INCLUDES //
+// The includes function should determine whether an array includes a certain value among its elements. Return true if certain value is found, false otherwise.
+
 Array.prototype.myIncludes = function(searchElement) {
   // Place your code here.
+  let x = false;
+  for(let i = 0; i < this.length; i++) {
+    if(searchElement==this[i]) {
+      x = true;
+    }
+  }
+  return x;
 };
+
+//Test for INCLUDES
+console.log("INCLUDES FUNCTION");
+const array4 = [1,2,3];
+console.log(array4);
+console.log("Does this array INCLUDE '2'?");
+console.log(array4.myIncludes(2));
+const animals = ['rabbits','bunnies','birds'];
+console.log("animals: ");
+console.log(animals);
+console.log("Does this array INCLUDE 'bunnies'?");
+console.log(animals.myIncludes('bunnies'));
+console.log("Does this array INCLUDE 'lizards'?");
+console.log(animals.myIncludes('lizards'));
+console.log("----------------------------------------------------------------------");
+
 
 // INDEXOF //
 Array.prototype.myIndexOf = function(searchElement) {
