@@ -117,7 +117,7 @@ const isBelow = (currentValue) => currentValue < 40;
 console.log(array2.myEvery(isBelow));
 console.log("----------------------------------------------------------------");
 
-/*
+
 // REDUCE //
 // The reduce method should run a callback function on each element of the array
 Array.prototype.myReduce = function(callbackFn) {
@@ -176,16 +176,12 @@ console.log("-------------------------------------------------------------------
 //The indexOf method should return the first INDEX at which a given element can be found in the array. If it cannot be found, return -1.
 Array.prototype.myIndexOf = function(searchElement) {
   // Place your code here.
-  let x = 0;
   for(let i = 0; i < this.length; i++) {
     if(searchElement == this[i]) {
-       x = i;
-    }
-    else {
-      x = -1;
+      return i;
     }
   }
-  return x;
+  return -1;
 };
 
 //TEST FOR INDEXOF
@@ -235,4 +231,4 @@ Object.myKeys = function(object) {
 Object.myValues = function(object) {
   // Place your code here.
 };
-*/
+
