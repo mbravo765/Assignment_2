@@ -9,7 +9,7 @@ In this Assignment, we use the prototype constructor to add new methods to the A
 ----------------------------------------------------------*/
 
 
-let myArray = [1,2,3,4,5];
+let myArray = [1,9,3,5,7];
 
 //PUSH
 //From Example Code provided on course page
