@@ -75,13 +75,13 @@ console.log("------------------------------------------------------------");
 // This method should test whether there is at least one element in the array that passes the provided test
 Array.prototype.mySome = function(callbackFn) {
   // Place your code here.
-  let x = false;
+  let boolean = false;
   for(let i = 0; i < this.length; i++) {
     if(callbackFn(this[i],i,this)) {
-      x = true;
+      boolean = true;
     }
   }
-  return x;
+  return boolean;
 };
 
 //Test for Some method
@@ -98,25 +98,26 @@ console.log("------------------------------------------------------------");
 //Does not work for every element
 Array.prototype.myEvery = function(callbackFn) {
   // Place your code here.
-  let x = false;
+  let boolean = true;
   for(let i = 0; i < this.length; i++) {
     if(callbackFn(this[i],i,this)) {
-      x = true;
+      boolean = true;
     }
+   boolean = false;
   }
-  return true;
+  return boolean;
 };
 
 //Test for every function
 console.log("Every function");
-const array2 = [13,26,56,32,78,100,4];
+const array2 = [13,26,56,32,17,10,4];
 console.log(array2);
 console.log("Check if every element in the array is under 40");
 const isBelow = (currentValue) => currentValue < 40;
 console.log(array2.myEvery(isBelow));
 console.log("----------------------------------------------------------------");
 
-
+/*
 // REDUCE //
 // The reduce method should run a callback function on each element of the array
 Array.prototype.myReduce = function(callbackFn) {
@@ -234,3 +235,4 @@ Object.myKeys = function(object) {
 Object.myValues = function(object) {
   // Place your code here.
 };
+*/
