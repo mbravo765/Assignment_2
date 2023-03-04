@@ -1,3 +1,4 @@
+Michelle Bravo
 # javascript-methods-starter-template-code
 This repository is the starter code for Assignment 2 - JavaScript Methods. 
 
