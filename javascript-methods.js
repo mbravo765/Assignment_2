@@ -53,7 +53,7 @@ Array.prototype.myFilter = function(callbackFn) {
   const filtered_array = []; //create a new array for filtered elements
   for(let i = 0; i < this.length; i++) {
     if(callbackFn(this[i],i,this)) {
-      filtered_array.myPush(callbackFn(this[i],i,this));
+      filtered_array.myPush(this[i]);
     }
   }
   return filtered_array;
