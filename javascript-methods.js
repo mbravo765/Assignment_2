@@ -93,10 +93,27 @@ console.log(myArray.mySome(even));
 console.log("------------------------------------------------------------");
 
 
-// EVERY //
+// EVERY
+// This every function should return a boolean value that returns true if all elements in the array pass the test implemented by the function
+
 Array.prototype.myEvery = function(callbackFn) {
   // Place your code here.
+  let x = false;
+  for(let i = 0; i < this.length; i++) {
+    if(callbackFn(this[i],i,this)) {
+      x = true;
+    }
+  }
+  return true;
 };
+
+//Test for every function
+console.log("Every function");
+const array2 = [13,26,56,32,78,100,4];
+console.log(array2);
+console.log("Check if every element in the array is under 40");
+const isBelow = (currentValue) => currentValue < 40;
+console.log(array2.myEvery(isBelow));
 
 // REDUCE //
 Array.prototype.myReduce = function(callbackFn) {
