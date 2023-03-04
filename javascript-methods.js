@@ -114,11 +114,32 @@ console.log(array2);
 console.log("Check if every element in the array is under 40");
 const isBelow = (currentValue) => currentValue < 40;
 console.log(array2.myEvery(isBelow));
+console.log("----------------------------------------------------------------");
+
 
 // REDUCE //
+// The reduce method should run a callback function on each element of the array
 Array.prototype.myReduce = function(callbackFn) {
   // Place your code here.
+  let total = 0;
+  for(let i = 0; i < this.length; i++) {
+    if(callbackFn(this[i],i,this)) {
+      total += this[i];
+    }
+  }
+  return total;
 };
+
+//Test for reduce
+console.log("Reduce Function");
+const array3 = [1,2,3,4];
+console.log(array3);
+const initVal = 0;
+const total = array3.myReduce((accumulator, currentValue) => accumulator + currentValue, initVal);
+console.log("Return sum of all elements in the array: ");
+console.log(total);
+console.log("---------------------------------------------------------------------");
+
 
 // INCLUDES //
 Array.prototype.myIncludes = function(searchElement) {
