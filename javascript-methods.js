@@ -200,9 +200,30 @@ console.log(animals.myIndexOf('jellyfish'));
 
 
 // LASTINDEXOF //
+// The lastIndexOf function should return the last index at which a given element can be found in an array. If it is not found, return -1. The array is searched backwards.
 Array.prototype.myLastIndexOf = function(searchElement) {
   // Place your code here.
+  let index = 0;
+  for(let i = this[this.length-1]; i < this.length; i--) {
+    if(searchElement == this[i]) {
+      index = i;
+    }
+    else {
+      index = -1;
+    }
+  }
+   return index;
 };
+
+console.log("LASTINDEXOF FUNCTION");
+const ocean_animals = ['fish', 'dolphins', 'sharks', 'jellyfish', 'fish'];
+console.log(ocean_animals);
+console.log("Return last index of 'fish' in array");
+console.log(ocean_animals.myLastIndexOf('fish'));
+console.log("Return last index of 'dolphins' in array");
+console.log(ocean_animals.myLastIndexOf('dolphins'));
+console.log("--------------------------------------------------------------------------");
+
 
 // KEYS //
 Object.myKeys = function(object) {
