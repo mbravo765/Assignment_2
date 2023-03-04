@@ -27,7 +27,7 @@ Array.prototype.myPush = function(...args) {
 };
 
 // MAP //
-// The map() method should take in an array of elements and execute a callback function on each of those elements
+// The map() method should create a new array with new elements that have done the provided function on every element in the old array
 Array.prototype.myMap = function(callbackFn) {
   // Place your code here.
   const new_array = [];
@@ -47,9 +47,26 @@ console.log(map1);
 console.log("----------------------------------------------------------------");
 
 // FILTER //
+// This function should return a new array with elements that pass the filter provided
 Array.prototype.myFilter = function(callbackFn) {
   // Place your code here.
+  const filtered_array = []; //create a new array for filtered elements
+  for(let i = 0; i < this.length; i++) {
+    if(myFilter(this[i],i,this)) {
+      filtered_array.myPush(callbackFn(this[i],i,this));
+    }
+  }
+  return filtered_array;
 };
+
+// Test for FILTER
+const words = ['fellow','friend','grandfather','aunt','cousin','grandmother'];
+console.log("All words in array: ");
+console.log(words);
+console.log("Words with a length greater than 6");
+const result = words.filter(word => word.length > 6);
+console.log(result);
+
 
 // SOME //
 Array.prototype.mySome = function(callbackFn) {
