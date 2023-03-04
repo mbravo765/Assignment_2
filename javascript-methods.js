@@ -95,7 +95,7 @@ console.log("------------------------------------------------------------");
 
 // EVERY
 // This every function should return a boolean value that returns true if all elements in the array pass the test implemented by the function
-
+//Does not work for every element
 Array.prototype.myEvery = function(callbackFn) {
   // Place your code here.
   let x = false;
