@@ -161,7 +161,7 @@ const array4 = [1,2,3];
 console.log(array4);
 console.log("Does this array INCLUDE '2'?");
 console.log(array4.myIncludes(2));
-const animals = ['rabbits','bunnies','birds'];
+const animals = ['rabbits','bunnies','birds', "ducks", "owls", "bunnies"];
 console.log("animals: ");
 console.log(animals);
 console.log("Does this array INCLUDE 'bunnies'?");
@@ -172,9 +172,32 @@ console.log("-------------------------------------------------------------------
 
 
 // INDEXOF //
+//The indexOf method should return the first INDEX at which a given element can be found in the array. If it cannot be found, return -1.
 Array.prototype.myIndexOf = function(searchElement) {
   // Place your code here.
+  let x = 0;
+  for(let i = 0; i < this.length; i++) {
+    if(searchElement == this[i]) {
+       x = i;
+    }
+    else {
+      x = -1;
+    }
+  }
+  return x;
 };
+
+//TEST FOR INDEXOF
+console.log("indexOf function");
+console.log(animals);
+console.log("Return index of 'bunnies'");
+console.log(animals.myIndexOf('bunnies'));
+console.log("Return index of 'bunnies' starting after index 2");
+console.log(animals.myIndexOf('bunnies',2));
+console.log("Return index of 'jellyfish'");
+console.log(animals.myIndexOf('jellyfish'));
+
+
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(searchElement) {
