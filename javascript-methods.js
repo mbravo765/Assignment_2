@@ -52,8 +52,8 @@ Array.prototype.myFilter = function(callbackFn) {
   // Place your code here.
   const filtered_array = []; //create a new array for filtered elements
   for(let i = 0; i < this.length; i++) {
-    if(myFilter(this[i],i,this)) {
-      filtered_array.myPush(callbackFn(this[i],i,this));
+    if(callbackFn(this[i],i,this)) {
+      filtered_array.myPush(this[i]);
     }
   }
   return filtered_array;
@@ -64,7 +64,7 @@ const words = ['fellow','friend','grandfather','aunt','cousin','grandmother'];
 console.log("All words in array: ");
 console.log(words);
 console.log("Words with a length greater than 6");
-const result = words.filter(word => word.length > 6);
+const result = words.myFilter(word => word.length > 6);
 console.log(result);
 
 
